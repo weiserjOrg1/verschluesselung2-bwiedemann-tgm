@@ -38,6 +38,9 @@ public class Controller implements ActionListener {
             this.v.getAusgabe().setText(this.m.getvMethod().encrypt(this.v.getEingabe().getText()));
             //this.v.getAusgabe().setText(this.m.getvMethod().decrypt(this.v.getEingabe().getText()));
         }
+        if(v.getcDecrypt().isSelected()) {
+        	this.v.getAusgabe().setText(this.m.getvMethod().decrypt(this.v.getEingabe().getText()));
+        }
     }
 
     public static void main(String[] args) {

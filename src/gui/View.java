@@ -8,10 +8,11 @@ public class View extends JFrame {
     private JTextField eingabe, secret, shift;
     private JLabel ausgabe;
     private JRadioButton secretR, shiftR;
+    private JCheckBox cDecrypt;
 
     public View(Controller c) {
         this.setTitle("Verschl");
-        this.setSize(400, 600);
+        this.setSize(600, 300);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
 
@@ -22,18 +23,20 @@ public class View extends JFrame {
         this.ausgabe = new JLabel("ausgabe");
         this.secretR = new JRadioButton("secret");
         this.shiftR = new JRadioButton("shift");
+        this.cDecrypt = new JCheckBox("Decrypt");
         ButtonGroup b = new ButtonGroup();
         b.add(secretR);
         b.add(shiftR);
 
         Container center = new Container();
-        center.setLayout(new GridLayout(3, 2, 5, 5));
+        center.setLayout(new GridLayout(4, 2, 5, 5));
         center.add(eingabe);
         center.add(secret);
         center.add(ausgabe);
         center.add(shift);
         center.add(secretR);
         center.add(shiftR);
+        center.add(cDecrypt);
 
         this.setLayout(new BorderLayout());
         this.add(bencrypt, BorderLayout.SOUTH);
@@ -42,6 +45,7 @@ public class View extends JFrame {
         shiftR.addActionListener(c);
         secretR.addActionListener(c);
         bencrypt.addActionListener(c);
+       
 
         this.setVisible(true);
     }
@@ -101,4 +105,12 @@ public class View extends JFrame {
     public void setShiftR(JRadioButton shiftR) {
         this.shiftR = shiftR;
     }
+    public JCheckBox getcDecrypt() {
+        return cDecrypt;
+    }
+
+    public void setcDecrypt(JCheckBox cDecrypt) {
+        this.cDecrypt = cDecrypt;
+    }
+    
 }
